@@ -1,0 +1,19 @@
+{
+  "name": "warm-lamp-chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client.js",
+  "source": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel"
+  },
+  "author": "Yurii Pochtiennykh",
+  "license": "ISC",
+  "dependencies": {
+    "nanoid": "^4.0.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.2"
+  }
+}
