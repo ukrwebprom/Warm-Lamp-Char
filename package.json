@@ -11,6 +11,8 @@
   "author": "Yurii Pochtiennykh",
   "license": "ISC",
   "dependencies": {
+    "beepody": "^0.3.33333333",
+    "lodash.throttle": "^4.1.1",
     "nanoid": "^4.0.0"
   },
   "devDependencies": {
