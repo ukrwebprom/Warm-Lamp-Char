@@ -1,5 +1,5 @@
 @import "https://fonts.googleapis.com/css2?family=Roboto&display=swap";
-body {
+body, p, h1 {
   color: #7fff00;
   background-color: #000;
   margin: 0;
@@ -8,15 +8,13 @@ body {
   font-size: 18px;
 }
 
-#historyframe, #typeframe {
-  width: 100%;
-}
-
 #historyframe {
+  width: 100%;
   margin-bottom: 50px;
 }
 
 #typeframe {
+  width: 100%;
   background-color: #000;
   border-top: 1px solid #7fff00;
   flex-grow: 1;
@@ -35,16 +33,64 @@ body {
   padding: 15px;
 }
 
-.sendbtn {
-  width: 40px;
-  height: 40px;
+.overlay {
+  width: 100%;
+  height: 100vh;
+  background: url("back.41dc40c5.jpg") 0 0 / cover;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.welcome {
+  background-color: #000c;
+  border: 4px dotted #7fff00;
+  padding: 15px;
+}
+
+.welcome h1 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.welcome-header {
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+  display: flex;
+}
+
+.logform {
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+}
+
+.logform-btn {
   color: #000;
   background-color: #7fff00;
   border: 0;
-  font-size: 24px;
-  position: absolute;
-  top: -40px;
-  right: 20px;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.logform-input {
+  height: 26px;
+  color: #fff;
+  background-color: #0000;
+  border: 1px solid #7fff00;
+  outline: 0;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 /*# sourceMappingURL=index.3092e1e0.css.map */

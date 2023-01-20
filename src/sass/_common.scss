@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-body {
+body, p, h1 {
     background-color: black;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
@@ -9,14 +9,12 @@ body {
     margin:0;
 }
 
-#historyframe, #typeframe {
-    width:100%;
-}
 #historyframe {
+    width:100%;
     margin-bottom:50px;
 }
 #typeframe {
-
+    width:100%;
     flex-grow: 1;
     position: fixed;
     left:0px;
@@ -33,7 +31,61 @@ body {
 .mainframe {
     padding:15px;
 }
-.sendbtn {
+
+.overlay {
+    background: url('../imgs/back.jpg');
+    background-size: cover;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.welcome {
+    border: 4px dotted chartreuse;
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    padding: 15px;
+    & h1 {
+        font-size: 18px;
+        font-weight: 400;
+    }
+}
+.welcome-header {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.logform {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+}
+.logform-btn {
+    padding:10px;
+    background-color: chartreuse;
+    color:black;
+    font-family: inherit;
+    font-size:16px;
+    border:0;
+}
+.logform-input {
+    height:26px;
+    border: 1px solid chartreuse;
+    background-color: transparent;
+    outline:0;
+    color:white;
+    font-family: inherit;
+    font-size:16px;
+}
+.hidden {
+    visibility: hidden;
+}
+/* .sendbtn {
     width:40px;
     height:40px;
     background-color: chartreuse;
@@ -43,4 +95,4 @@ body {
     top:-40px;
     border:0;
     font-size: 24px;
-}
+} */

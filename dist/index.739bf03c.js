@@ -532,8 +532,48 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"ebWYT":[function(require,module,exports) {
-/* import _ from 'lodash.throttle'; */ const queryString = window.location.search;
-console.log("queryString: ", queryString);
+var _nanoid = require("nanoid");
+var _websocket = require("./websocket");
+const NEW_CHAT = "Создать новый чат";
+const LOGIN_CHAT = "Войти в чат";
+const BASE_URL = "ws://tranquil-reaches-58824.herokuapp.com/";
+const chatFrame = document.querySelector("#historyframe");
+const loginBtn = document.querySelector(".logform-btn");
+const dialog = document.querySelector(".overlay");
+const ws = new (0, _websocket.WS)(messageHandler);
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+loginBtn.textContent = urlParams.has("chatid") ? LOGIN_CHAT : NEW_CHAT;
+const chatID = urlParams.has("chatid") ? urlParams.get("chatid") : (0, _nanoid.nanoid)();
+const postMessage = (name, message)=>{
+    const newmessage = document.createElement("p");
+    newmessage.textContent = `${name}: ${message}`;
+    chatFrame.append(newmessage);
+};
+/* const makeSocket = (name, ID) => {
+        ws.login(name, ID)
+        ws = new WebSocket(`${BASE_URL}?id=${chatID}&name=${name}`);
+        ws.onopen = () => {
+                console.log('connected')
+                isOnline = true;
+            };
+        ws.onclose = () => {
+                console.log('dis-connected')
+                isOnline = false;
+            };
+        ws.onmessage = response => {
+                const info = JSON.parse(response.data);
+                postMessage('Vasja', info);
+        }
+} */ const onLogin = (e)=>{
+    e.preventDefault();
+    const name = e.target.elements.name.value.trim();
+    if (name === "") return;
+    dialog.classList.toggle("hidden");
+    ws.login(name, chatID);
+};
+const loginForm = document.querySelector(".logform");
+loginForm.addEventListener("submit", onLogin);
 const typearea = document.querySelector("#typearea");
 typearea.addEventListener("keydown", (evt)=>{
     if (evt.key === "Enter") {
@@ -545,8 +585,97 @@ typearea.addEventListener("keydown", (evt)=>{
 function sendMessage(m) {
     console.log(m);
     typearea.textContent = "";
+    ws.send(m);
+}
+function messageHandler(m) {
+    postMessage("Vasja", m);
 }
 
-},{}]},["cVgJb","ebWYT"], "ebWYT", "parcelRequire666c")
+},{"nanoid":"2ifus","./websocket":"hQPTI"}],"2ifus":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "urlAlphabet", ()=>(0, _indexJs.urlAlphabet));
+parcelHelpers.export(exports, "random", ()=>random);
+parcelHelpers.export(exports, "customRandom", ()=>customRandom);
+parcelHelpers.export(exports, "customAlphabet", ()=>customAlphabet);
+parcelHelpers.export(exports, "nanoid", ()=>nanoid);
+var _indexJs = require("./url-alphabet/index.js");
+let random = (bytes)=>crypto.getRandomValues(new Uint8Array(bytes));
+let customRandom = (alphabet, defaultSize, getRandom)=>{
+    let mask = (2 << Math.log(alphabet.length - 1) / Math.LN2) - 1;
+    let step = -~(1.6 * mask * defaultSize / alphabet.length);
+    return (size = defaultSize)=>{
+        let id = "";
+        while(true){
+            let bytes = getRandom(step);
+            let j = step;
+            while(j--){
+                id += alphabet[bytes[j] & mask] || "";
+                if (id.length === size) return id;
+            }
+        }
+    };
+};
+let customAlphabet = (alphabet, size = 21)=>customRandom(alphabet, size, random);
+let nanoid = (size = 21)=>crypto.getRandomValues(new Uint8Array(size)).reduce((id, byte)=>{
+        byte &= 63;
+        if (byte < 36) id += byte.toString(36);
+        else if (byte < 62) id += (byte - 26).toString(36).toUpperCase();
+        else if (byte > 62) id += "-";
+        else id += "_";
+        return id;
+    }, "");
+
+},{"./url-alphabet/index.js":false,"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"hQPTI":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "WS", ()=>WS);
+class WS {
+    constructor(messageHandler){
+        this.message = {};
+        this.handler = messageHandler;
+    }
+    login(name, ID) {
+        this.userName = name;
+        this.chatID = ID;
+        this.ws = new WebSocket(`ws://tranquil-reaches-58824.herokuapp.com/?id=${this.chatID}&name=${this.userName}`);
+    }
+    onGetMessage() {
+        this.handler(this.message);
+    }
+    send() {}
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["cVgJb","ebWYT"], "ebWYT", "parcelRequire666c")
 
 //# sourceMappingURL=index.739bf03c.js.map
