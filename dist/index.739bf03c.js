@@ -532,7 +532,9 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"ebWYT":[function(require,module,exports) {
-/* import _ from 'lodash.throttle'; */ const typearea = document.querySelector("#typearea");
+/* import _ from 'lodash.throttle'; */ const queryString = window.location.search;
+console.log("queryString: ", queryString);
+const typearea = document.querySelector("#typearea");
 typearea.addEventListener("keydown", (evt)=>{
     if (evt.key === "Enter") {
         evt.preventDefault();
