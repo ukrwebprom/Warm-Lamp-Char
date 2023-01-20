@@ -2,10 +2,9 @@
   "name": "warm-lamp-chat",
   "version": "1.0.0",
   "description": "",
-  "main": "client.js",
   "source": "src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build src/*.html --public-url /Warm-Lamp-Char/"
     "start": "parcel"
   },
   "repository": {

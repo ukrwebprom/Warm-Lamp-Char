@@ -1,4 +1,6 @@
 /* import _ from 'lodash.throttle'; */
+const queryString = window.location.search;
+console.log(queryString);
 
 const typearea = document.querySelector('#typearea');
 typearea.addEventListener('keydown', evt => {
