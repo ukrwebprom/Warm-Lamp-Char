@@ -42,7 +42,7 @@ function showChat() {
     }
     socket.onmessage = response => {
         const info = JSON.parse(response.data);
-        postMessage('Vasja', info);
+        postMessage(info.sender, info.data);
     }
     modules.typearea.addEventListener('keydown', evt => {
         if(evt.key === 'Enter') {
