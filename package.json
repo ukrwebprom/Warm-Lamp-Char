@@ -8,6 +8,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ukrwebprom/Warm-Lamp-Char.git"
+  },
   "author": "Yurii Pochtiennykh",
   "license": "ISC",
   "dependencies": {
