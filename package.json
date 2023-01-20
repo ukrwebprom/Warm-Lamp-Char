@@ -4,7 +4,7 @@
   "description": "",
   "source": "src/index.html",
   "scripts": {
-    "build": "parcel build src/*.html --public-url /Warm-Lamp-Char/"
+    "build": "parcel build src/*.html --public-url /Warm-Lamp-Char/",
     "start": "parcel"
   },
   "repository": {
