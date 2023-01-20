@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-body, p, h1 {
+body {
   background-color: black;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
@@ -8,12 +8,12 @@ body, p, h1 {
   margin: 0;
 }
 
-#historyframe {
+.historyframe {
   width: 100%;
   margin-bottom: 50px;
 }
 
-#typeframe {
+.typeframe {
   width: 100%;
   flex-grow: 1;
   position: fixed;
@@ -23,7 +23,7 @@ body, p, h1 {
   border-top: 1px solid chartreuse;
 }
 
-#typearea {
+.typearea {
   color: white;
   padding: 15px;
   outline: 0;
@@ -90,7 +90,7 @@ body, p, h1 {
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 
 /* .sendbtn {
@@ -103,4 +103,62 @@ body, p, h1 {
     top:-40px;
     border:0;
     font-size: 24px;
-} *//*# sourceMappingURL=index.css.map */
+} */
+.login, .getname {
+  background: url("../imgs/back.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.ava {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  border: 0;
+  overflow: hidden;
+}
+
+.loginMsg {
+  position: fixed;
+  bottom: 60px;
+  right: 10px;
+  width: 80%;
+  max-width: 300px;
+  background-color: aliceblue;
+  border-radius: 20px 20px 0 20px;
+  color: black;
+  font-size: 14px;
+}
+
+.container {
+  padding: 15px;
+}
+
+.js-link {
+  font-size: 12px;
+  color: blueviolet;
+}
+
+.nameForm__input {
+  padding: 7px;
+  font-family: inherit;
+  outline: none;
+  border: 0;
+  background-color: transparent;
+  width: 150px;
+}
+
+.nameForm {
+  width: 100%;
+  display: flex;
+}
+
+.nameForm__btn {
+  font-family: inherit;
+  border: 0;
+  background-color: transparent;
+}/*# sourceMappingURL=index.css.map */

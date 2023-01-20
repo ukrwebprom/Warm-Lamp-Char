@@ -1,5 +1,5 @@
 @import "https://fonts.googleapis.com/css2?family=Roboto&display=swap";
-body, p, h1 {
+body {
   color: #7fff00;
   background-color: #000;
   margin: 0;
@@ -8,12 +8,12 @@ body, p, h1 {
   font-size: 18px;
 }
 
-#historyframe {
+.historyframe {
   width: 100%;
   margin-bottom: 50px;
 }
 
-#typeframe {
+.typeframe {
   width: 100%;
   background-color: #000;
   border-top: 1px solid #7fff00;
@@ -23,7 +23,7 @@ body, p, h1 {
   left: 0;
 }
 
-#typearea {
+.typearea {
   color: #fff;
   outline: 0;
   padding: 15px;
@@ -90,7 +90,65 @@ body, p, h1 {
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
+}
+
+.login, .getname {
+  width: 100%;
+  height: 100vh;
+  background: url("back.41dc40c5.jpg") 0 0 / cover;
+}
+
+.ava {
+  width: 70px;
+  height: 70px;
+  border: 0;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  overflow: hidden;
+}
+
+.loginMsg {
+  width: 80%;
+  max-width: 300px;
+  color: #000;
+  background-color: #f0f8ff;
+  border-radius: 20px 20px 0;
+  font-size: 14px;
+  position: fixed;
+  bottom: 60px;
+  right: 10px;
+}
+
+.container {
+  padding: 15px;
+}
+
+.js-link {
+  color: #8a2be2;
+  font-size: 12px;
+}
+
+.nameForm__input {
+  width: 150px;
+  background-color: #0000;
+  border: 0;
+  outline: none;
+  padding: 7px;
+  font-family: inherit;
+}
+
+.nameForm {
+  width: 100%;
+  display: flex;
+}
+
+.nameForm__btn {
+  background-color: #0000;
+  border: 0;
+  font-family: inherit;
 }
 
 /*# sourceMappingURL=index.3092e1e0.css.map */

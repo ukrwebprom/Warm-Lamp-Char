@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-body, p, h1 {
+body {
     background-color: black;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
@@ -9,11 +9,11 @@ body, p, h1 {
     margin:0;
 }
 
-#historyframe {
+.historyframe {
     width:100%;
     margin-bottom:50px;
 }
-#typeframe {
+.typeframe {
     width:100%;
     flex-grow: 1;
     position: fixed;
@@ -23,7 +23,7 @@ body, p, h1 {
     border-top: 1px solid chartreuse;
 
 }
-#typearea {
+.typearea {
     color:white;
     padding:15px;
     outline:0;
@@ -83,7 +83,7 @@ body, p, h1 {
     font-size:16px;
 }
 .hidden {
-    visibility: hidden;
+    display:none;
 }
 /* .sendbtn {
     width:40px;
