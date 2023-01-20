@@ -33,7 +33,7 @@ function showChat() {
     modules.getNane.classList.add('hidden');
     modules.chat.classList.remove('hidden');
 
-    const socket = new WebSocket(`ws://tranquil-reaches-58824.herokuapp.com/?id=${chatID}&name=${userName}`);
+    const socket = new WebSocket(`wss://tranquil-reaches-58824.herokuapp.com/?id=${chatID}&name=${userName}`);
     socket.onopen = () => {
         console.log('opened');
     }
