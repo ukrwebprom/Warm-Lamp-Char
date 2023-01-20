@@ -40,6 +40,10 @@ function showChat() {
     socket.onclose = () => {
         console.log('closed');
     }
+    socket.onmessage = response => {
+        const info = JSON.parse(response.data);
+        postMessage('Vasja', info);
+    }
     modules.typearea.addEventListener('keydown', evt => {
         if(evt.key === 'Enter') {
             evt.preventDefault();
@@ -73,4 +77,9 @@ function askName() {
             window.location.reload();
         };
     })
+}
+
+function postMessage(name, data) {
+    const newline = `<p>${name}: ${data}</p>`;
+    modules.output.insertAdjacentHTML('beforeend', newline);
 }
