@@ -48,7 +48,7 @@ function showChat() {
     modules.typearea.addEventListener('keydown', evt => {
         if(evt.key === 'Enter') {
             evt.preventDefault();
-            const message = modules.typearea.textContent.trim();
+            const message = String(modules.typearea.textContent.trim());
             if( message !== "") {
                 modules.typearea.textContent = '';
                 socket.send(message);}
