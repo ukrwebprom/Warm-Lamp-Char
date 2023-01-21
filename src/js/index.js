@@ -41,7 +41,7 @@ function showChat() {
         console.log('closed');
     }
     socket.onmessage = response => {
-        const info = JSON.parse(response);
+        const info = JSON.parse(response.data);
         console.log(info);
         postMessage(info.sender, info.data);
     }
