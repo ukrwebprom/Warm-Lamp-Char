@@ -42,6 +42,7 @@ function showChat() {
     }
     socket.onmessage = response => {
         const info = JSON.parse(response.data);
+        console.log(info);
         postMessage(info.sender, info.data);
     }
     modules.typearea.addEventListener('keydown', evt => {
