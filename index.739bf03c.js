@@ -533,65 +533,84 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"ebWYT":[function(require,module,exports) {
 var _nanoid = require("nanoid");
-var _websocket = require("./websocket");
-const NEW_CHAT = "Создать новый чат";
-const LOGIN_CHAT = "Войти в чат";
-const BASE_URL = "ws://tranquil-reaches-58824.herokuapp.com/";
-const chatFrame = document.querySelector("#historyframe");
-const loginBtn = document.querySelector(".logform-btn");
-const dialog = document.querySelector(".overlay");
-const ws = new (0, _websocket.WS)(messageHandler);
+const BASE_URL = document.URL;
+const WS_URL = "ws://tranquil-reaches-58824.herokuapp.com/";
+const modules = {
+    getID: document.querySelector(".login"),
+    getNane: document.querySelector(".getname"),
+    chat: document.querySelector(".mainframe"),
+    output: document.querySelector(".historyframe"),
+    typearea: document.querySelector(".typearea")
+};
+let chatID = null;
+let userName = null;
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-loginBtn.textContent = urlParams.has("chatid") ? LOGIN_CHAT : NEW_CHAT;
-const chatID = urlParams.has("chatid") ? urlParams.get("chatid") : (0, _nanoid.nanoid)();
-const postMessage = (name, message)=>{
-    const newmessage = document.createElement("p");
-    newmessage.textContent = `${name}: ${message}`;
-    chatFrame.append(newmessage);
-};
-/* const makeSocket = (name, ID) => {
-        ws.login(name, ID)
-        ws = new WebSocket(`${BASE_URL}?id=${chatID}&name=${name}`);
-        ws.onopen = () => {
-                console.log('connected')
-                isOnline = true;
-            };
-        ws.onclose = () => {
-                console.log('dis-connected')
-                isOnline = false;
-            };
-        ws.onmessage = response => {
-                const info = JSON.parse(response.data);
-                postMessage('Vasja', info);
-        }
-} */ const onLogin = (e)=>{
-    e.preventDefault();
-    const name = e.target.elements.name.value.trim();
-    if (name === "") return;
-    dialog.classList.toggle("hidden");
-    ws.login(name, chatID);
-};
-const loginForm = document.querySelector(".logform");
-loginForm.addEventListener("submit", onLogin);
-const typearea = document.querySelector("#typearea");
-typearea.addEventListener("keydown", (evt)=>{
-    if (evt.key === "Enter") {
-        evt.preventDefault();
-        const message = typearea.textContent.trim();
-        if (message !== "") sendMessage(message);
-    }
-});
-function sendMessage(m) {
-    console.log(m);
-    typearea.textContent = "";
-    ws.send(m);
+if (urlParams.has("slotID")) {
+    chatID = urlParams.get("slotID");
+    userName = sessionStorage.getItem("userName");
+    if (userName === null) askName();
+    else showChat();
+} else {
+    chatID = (0, _nanoid.nanoid)();
+    showID();
 }
-function messageHandler(m) {
-    postMessage("Vasja", m);
+/* const chatID = urlParams.has('chatid') ? urlParams.get('chatid') : nanoid(); */ function showChat() {
+    modules.getID.classList.add("hidden");
+    modules.getNane.classList.add("hidden");
+    modules.chat.classList.remove("hidden");
+    const socket = new WebSocket(`wss://tranquil-reaches-58824.herokuapp.com/?id=${chatID}&name=${userName}`);
+    socket.onopen = ()=>{
+        console.log("opened");
+    };
+    socket.onclose = ()=>{
+        console.log("closed");
+    };
+    socket.onmessage = (response)=>{
+        const info = JSON.parse(response.data);
+        postMessage(info.sender, info.data);
+    };
+    modules.typearea.addEventListener("keydown", (evt)=>{
+        if (evt.key === "Enter") {
+            evt.preventDefault();
+            const message = modules.typearea.textContent.trim();
+            if (message !== "") {
+                modules.typearea.textContent = "";
+                socket.send(message);
+            }
+        }
+    });
+}
+function showID() {
+    modules.getID.classList.remove("hidden");
+    modules.getNane.classList.add("hidden");
+    modules.chat.classList.add("hidden");
+    const add = document.querySelector(".js-link");
+    const slotAddr = document.createElement("a");
+    slotAddr.href = `${BASE_URL}?slotID=${chatID}`;
+    slotAddr.textContent = `${BASE_URL}?slotID=${chatID}`;
+    add.append(slotAddr);
+}
+function askName() {
+    modules.getID.classList.add("hidden");
+    modules.getNane.classList.remove("hidden");
+    modules.chat.classList.add("hidden");
+    const nameForm = document.querySelector(".nameForm");
+    nameForm.addEventListener("submit", (e)=>{
+        e.preventDefault();
+        const name = e.target.elements.myName.value.trim();
+        if (name !== "") {
+            sessionStorage.setItem("userName", name);
+            window.location.reload();
+        }
+    });
+}
+function postMessage(name, data) {
+    const newline = `<p>${name}: ${data}</p>`;
+    modules.output.insertAdjacentHTML("beforeend", newline);
 }
 
-},{"nanoid":"2ifus","./websocket":"hQPTI"}],"2ifus":[function(require,module,exports) {
+},{"nanoid":"2ifus"}],"2ifus":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "urlAlphabet", ()=>(0, _indexJs.urlAlphabet));
@@ -656,26 +675,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"hQPTI":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "WS", ()=>WS);
-class WS {
-    constructor(messageHandler){
-        this.message = {};
-        this.handler = messageHandler;
-    }
-    login(name, ID) {
-        this.userName = name;
-        this.chatID = ID;
-        this.ws = new WebSocket(`ws://tranquil-reaches-58824.herokuapp.com/?id=${this.chatID}&name=${this.userName}`);
-    }
-    onGetMessage() {
-        this.handler(this.message);
-    }
-    send() {}
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["cVgJb","ebWYT"], "ebWYT", "parcelRequire666c")
+},{}]},["cVgJb","ebWYT"], "ebWYT", "parcelRequire666c")
 
 //# sourceMappingURL=index.739bf03c.js.map
