@@ -1,4 +1,4 @@
-4331
+4335
 48G:\GOIT\CHAT\node_modules\svgo\lib\svgo\jsAPI.js133170716702792903 0
 71G:\GOIT\CHAT\node_modules\caniuse-lite\data\features\text-decoration.js133170716728893098 0
 57G:\GOIT\CHAT\node_modules\caniuse-lite\data\regions\CI.js133170716713309081 0
@@ -51,7 +51,7 @@
 48G:\GOIT\CHAT\node_modules\htmlnano\.eslintignore133170716686507415 0
 46G:\GOIT\CHAT\node_modules\lmdb\dependencies\v8133170716714104476 1
 60G:\GOIT\CHAT\node_modules\type-fest\source\package-json.d.ts133170716700705636 0
-17G:\GOIT\CHAT\dist133187714649601012 1
+17G:\GOIT\CHAT\dist133187741695421089 1
 25G:\GOIT\CHAT\keyboard.jpg133186351753556817 0
 72G:\GOIT\CHAT\node_modules\caniuse-lite\data\features\mutationobserver.js133170716723504942 0
 44G:\GOIT\CHAT\node_modules\.package-lock.json133179468713942188 0
@@ -98,7 +98,7 @@
 44G:\GOIT\CHAT\node_modules\msgpackr\unpack.js133170716700388944 0
 53G:\GOIT\CHAT\node_modules\node-addon-api\CHANGELOG.md133170716699111148 0
 55G:\GOIT\CHAT\node_modules\@swc\helpers\lib\_inherits.js133170716705806300 0
-33G:\GOIT\CHAT\src\css\main.css.map133187712122731889 0
+33G:\GOIT\CHAT\src\css\main.css.map133187741607683072 0
 67G:\GOIT\CHAT\node_modules\caniuse-lite\data\features\textcontent.js133170716729002788 0
 44G:\GOIT\CHAT\node_modules\chrome-trace-event133170716692111789 1
 38G:\GOIT\CHAT\node_modules\yaml\browser133170716706061521 1
@@ -134,7 +134,7 @@
 67G:\GOIT\CHAT\node_modules\svgo\plugins\removeUnknownsAndDefaults.js133170716708084318 0
 59G:\GOIT\CHAT\node_modules\weak-lru-cache\tests\benchmark.js133170716687714746 0
 76G:\GOIT\CHAT\node_modules\caniuse-lite\data\features\prefers-color-scheme.js133170716727263658 0
-33G:\GOIT\CHAT\src\sass\_login.scss133187712119300019 0
+33G:\GOIT\CHAT\src\sass\_login.scss133187741604927337 0
 73G:\GOIT\CHAT\node_modules\caniuse-lite\data\features\channel-messaging.js133170716713208358 0
 31G:\GOIT\CHAT\node_modules\chalk133170716692141715 1
 76G:\GOIT\CHAT\node_modules\@parcel\utils\test\input\sourcemap\no-sourcemap.js133170716706979218 0
@@ -158,7 +158,7 @@
 68G:\GOIT\CHAT\node_modules\lmdb\node_modules\node-addon-api\README.md133170716699700118 0
 73G:\GOIT\CHAT\node_modules\@jridgewell\trace-mapping\dist\types\types.d.ts133170716696508510 0
 71G:\GOIT\CHAT\node_modules\caniuse-lite\data\features\arrow-functions.js133170716703465626 0
-28G:\GOIT\CHAT\src\js\index.js133187256593267280 0
+28G:\GOIT\CHAT\src\js\index.js133187741289125423 0
 69G:\GOIT\CHAT\node_modules\@parcel\reporter-cli\lib\CLIReporter.js.map133170716699920332 0
 63G:\GOIT\CHAT\node_modules\terser\node_modules\commander\LICENSE133170716686851942 0
 57G:\GOIT\CHAT\node_modules\@swc\helpers\src\_ts_values.mjs133170716715248001 0
@@ -194,7 +194,7 @@
 54G:\GOIT\CHAT\node_modules\css-tree\lib\walker\index.js133170716709148113 0
 56G:\GOIT\CHAT\node_modules\electron-to-chromium\README.md133170716695711059 0
 53G:\GOIT\CHAT\node_modules\lines-and-columns\README.md133170716689218180 0
-30G:\GOIT\CHAT\src\css\index.css133187712122731889 0
+30G:\GOIT\CHAT\src\css\index.css133187741607683072 0
 60G:\GOIT\CHAT\node_modules\@parcel\graph\src\AdjacencyList.js133170716691108424 0
 53G:\GOIT\CHAT\node_modules\@parcel\workers\lib\process133170716701117564 1
 50G:\GOIT\CHAT\node_modules\utility-types\SUPPORT.md133170716695736694 0
@@ -226,11 +226,11 @@
 68G:\GOIT\CHAT\node_modules\utility-types\dist\aliases-and-guards.d.ts133170716696036250 0
 85G:\GOIT\CHAT\node_modules\@parcel\watcher\prebuilds\darwin-arm64\node.napi.glibc.node133170716704430713 0
 67G:\GOIT\CHAT\node_modules\caniuse-lite\data\features\css-opacity.js133170716718163145 0
-34G:\GOIT\CHAT\src\css\index.css.map133187712122731889 0
+34G:\GOIT\CHAT\src\css\index.css.map133187741607683072 0
 44G:\GOIT\CHAT\node_modules\@parcel\graph\test133170716695044751 1
 52G:\GOIT\CHAT\node_modules\@jridgewell\set-array\dist133170716692401017 1
 68G:\GOIT\CHAT\node_modules\caniuse-lite\data\features\cryptography.js133170716714148283 0
-29G:\GOIT\CHAT\src\css\main.css133187712122731889 0
+29G:\GOIT\CHAT\src\css\main.css133187741607683072 0
 104G:\GOIT\CHAT\node_modules\@parcel\node-resolver-core\test\fixture\node_modules\package-fallback\index.js133170716703880092 0
 58G:\GOIT\CHAT\node_modules\svgo\plugins\removeEmptyAttrs.js133170716706723334 0
 39G:\GOIT\CHAT\node_modules\tslib\modules133170716691466176 1
@@ -2158,6 +2158,7 @@
 67G:\GOIT\CHAT\node_modules\caniuse-lite\data\features\ol-reversed.js133170716724061056 0
 42G:\GOIT\CHAT\node_modules\get-port\license133170716689108224 0
 44G:\GOIT\CHAT\node_modules\get-port\readme.md133170716690127488 0
+40G:\GOIT\CHAT\dist\index.1711c1b0.css.map133187741695421089 0
 48G:\GOIT\CHAT\node_modules\csso\lib\clean\Rule.js133170716705485798 0
 59G:\GOIT\CHAT\node_modules\escape-string-regexp\package.json133170716686280075 0
 67G:\GOIT\CHAT\node_modules\@parcel\core\lib\requests\AssetRequest.js133170716701785303 0
@@ -4300,7 +4301,7 @@
 35G:\GOIT\CHAT\dist\beep.5744cf86.wav133173928005728656 0
 34G:\GOIT\CHAT\dist\CHAT.59712999.js133179448790574355 0
 38G:\GOIT\CHAT\dist\CHAT.59712999.js.map133179448790614244 0
-27G:\GOIT\CHAT\dist\chat.html133187714648882940 0
+27G:\GOIT\CHAT\dist\chat.html133187741695391168 0
 37G:\GOIT\CHAT\dist\client.03e9ce42.css133187240944417755 0
 41G:\GOIT\CHAT\dist\client.03e9ce42.css.map133187240944477587 0
 36G:\GOIT\CHAT\dist\client.2ef20613.js133187240944417755 0
@@ -4309,6 +4310,7 @@
 40G:\GOIT\CHAT\dist\client.e58ec336.js.map133179447682161891 0
 29G:\GOIT\CHAT\dist\client.html133187714648793171 0
 40G:\GOIT\CHAT\dist\index.0f1d1225.css.map133187012467948036 0
+36G:\GOIT\CHAT\dist\index.1711c1b0.css133187741695391168 0
 36G:\GOIT\CHAT\dist\index.3092e1e0.css133187714293189800 0
 35G:\GOIT\CHAT\dist\index.333b87f1.js133187238917685195 0
 39G:\GOIT\CHAT\dist\index.333b87f1.js.map133187238917695176 0
@@ -4321,7 +4323,9 @@
 40G:\GOIT\CHAT\dist\index.b88fdb8c.css.map133187714649591037 0
 39G:\GOIT\CHAT\dist\index.e3dc7309.js.map133187253558549270 0
 39G:\GOIT\CHAT\dist\index.e58ec336.js.map133173193050324981 0
-28G:\GOIT\CHAT\dist\index.html133187714648793171 0
+35G:\GOIT\CHAT\dist\index.ef268972.js133187741392353219 0
+39G:\GOIT\CHAT\dist\index.ef268972.js.map133187741392367262 0
+28G:\GOIT\CHAT\dist\index.html133187741695391168 0
 32G:\GOIT\CHAT\dist\index_old.html133187714648793171 0
 37G:\GOIT\CHAT\dist\public.34df27b5.css133179447681264426 0
 40G:\GOIT\CHAT\dist\public.6f8ac908.js.map133179447681570544 0

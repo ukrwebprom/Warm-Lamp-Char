@@ -80,6 +80,6 @@ function askName() {
 }
 
 function postMessage(name, data) {
-    const newline = `<p>${name}: ${data}</p>`;
+    const newline = `<p><span class='chatname'>${name}:</span> ${data}</p>`;
     modules.output.insertAdjacentHTML('beforeend', newline);
 }
