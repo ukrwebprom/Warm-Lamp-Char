@@ -48,7 +48,7 @@ function showChat() {
     modules.typearea.addEventListener('keydown', evt => {
         if(evt.key === 'Enter') {
             evt.preventDefault();
-            const message = modules.typearea.textContent.trim().join();
+            const message = modules.typearea.textContent;
             if( message !== "") {
                 console.log(message);
                 modules.typearea.textContent = '';
