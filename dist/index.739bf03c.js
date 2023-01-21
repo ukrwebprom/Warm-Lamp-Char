@@ -568,12 +568,13 @@ if (urlParams.has("slotID")) {
     };
     socket.onmessage = (response)=>{
         const info = JSON.parse(response.data);
+        console.log(info);
         postMessage(info.sender, info.data);
     };
     modules.typearea.addEventListener("keydown", (evt)=>{
         if (evt.key === "Enter") {
             evt.preventDefault();
-            const message = modules.typearea.textContent.trim();
+            const message = String(modules.typearea.textContent.trim());
             if (message !== "") {
                 modules.typearea.textContent = "";
                 socket.send(message);
@@ -606,7 +607,7 @@ function askName() {
     });
 }
 function postMessage(name, data) {
-    const newline = `<p>${name}: ${data}</p>`;
+    const newline = `<p><span class='chatname'>${name}:</span> ${data}</p>`;
     modules.output.insertAdjacentHTML("beforeend", newline);
 }
 
