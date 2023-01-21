@@ -4,12 +4,12 @@
   "description": "",
   "source": "src/index.html",
   "scripts": {
-    "build": "parcel build src/*.html --public-url /Warm-Lamp-Char/",
+    "build": "parcel build src/*.html --public-url /Warm-Lamp-Chat/",
     "start": "parcel"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ukrwebprom/Warm-Lamp-Char.git"
+    "url": "git+https://github.com/ukrwebprom/Warm-Lamp-Chat.git"
   },
   "author": "Yurii Pochtiennykh",
   "license": "ISC",
