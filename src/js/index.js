@@ -41,8 +41,8 @@ function showChat() {
         console.log('closed');
     }
     socket.onmessage = response => {
-        const info = JSON.parse(response.data);
-        /* console.log(info); */
+        const info = JSON.parse(response);
+        console.log(info);
         postMessage(info.sender, info.data);
     }
     modules.typearea.addEventListener('keydown', evt => {
@@ -50,7 +50,7 @@ function showChat() {
             evt.preventDefault();
             const message = modules.typearea.textContent;
             if( message !== "") {
-                console.log(message);
+                /* console.log(message); */
                 modules.typearea.textContent = '';
                 socket.send(message);}
             }
