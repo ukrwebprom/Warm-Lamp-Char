@@ -42,14 +42,15 @@ function showChat() {
     }
     socket.onmessage = response => {
         const info = JSON.parse(response.data);
-        console.log(info);
+        /* console.log(info); */
         postMessage(info.sender, info.data);
     }
     modules.typearea.addEventListener('keydown', evt => {
         if(evt.key === 'Enter') {
             evt.preventDefault();
-            const message = String(modules.typearea.textContent.trim());
+            const message = modules.typearea.textContent.trim().join();
             if( message !== "") {
+                console.log(message);
                 modules.typearea.textContent = '';
                 socket.send(message);}
             }
