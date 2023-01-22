@@ -85,7 +85,7 @@ function postMessage(name, data) {
     const newline = `<p><span class='chatname'>${name}:</span> ${data}</p>`;
     modules.output.insertAdjacentHTML('beforeend', newline);
     window.scrollTo({
-        top: modules.output.scrollHeight - window.innerHeight,
+        top: modules.output.scrollHeight - window.innerHeight + 70,
         behavior: 'smooth'
     });
 }
