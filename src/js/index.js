@@ -91,7 +91,7 @@ window.addEventListener('resize', scrollBottom);
 
 function scrollBottom() {
     window.scrollTo({
-        top: modules.output.scrollHeight - window.innerHeight + 70,
+        top: modules.output.scrollHeight - window.innerHeight + 120,
         behavior: 'smooth'
     });
 }
